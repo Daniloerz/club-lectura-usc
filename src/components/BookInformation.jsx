@@ -18,6 +18,7 @@ import { TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import Footer from './Footer';
 import Rating from './Rating'; 
+import portada from '../img/portadas-libros.jpg'
 
 
 
@@ -56,14 +57,14 @@ export default function Album({titulo, autor}) {
       <HeaderLandingPage title="Club de lectura - USC" sections={sections}/>
         <Container sx={{ py: 8, display: 'flex', alignItems: 'center'}} >
         <Card
-                  sx={{ marginRight: 10, height: '100%', maxWidth: 600, display: 'flex', flexDirection: 'column' }}
+                  sx={{ marginRight: 10, maxWidth: 600, display: 'flex', flexDirection: 'column' }}
                 >
                   <CardMedia
                     component="div"
                     sx={{
-                      pt: '56.25%',
+                      pt: '100%',
                     }}
-                    image="https://source.unsplash.com/random?cover"
+                    image={portada}
                   />
                   <CardContent sx={{maxHeight: 800, marginRight: 50}} >
                   </CardContent>
@@ -80,6 +81,16 @@ export default function Album({titulo, autor}) {
           <b>Título del Libro:</b> {titulo}
           <br></br>
           <b>Autor:</b> {autor}
+          <br></br>
+          <b>Año de Publicación:</b> {autor}
+          <br></br>
+          <b>Género:</b> {autor}
+          <br></br>
+          <b>Editorial:</b> {autor}
+          <br></br>
+          <b>ISBN:</b> {autor}
+          <br></br>
+          <b>Sinopsis:</b> {autor}
         </Typography>
         </Container>
         <Container sx={{display: 'flex', flexDirection: 'column'}}>

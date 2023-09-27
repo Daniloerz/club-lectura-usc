@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Home from './Home';
-import SignInSide from './SignInSide';
-import SignUp from './SignUp';
-import LandingPage from './LandingPage';
-import BookInformation from './BookInformation';
+import Home from './components/Home';
+import SignInSide from './components/SignInSide';
+import SignUp from './components/SignUp';
+import LandingPage from './components/LandingPage';
+import BookInformation from './components/BookInformation';
 
 const router = createBrowserRouter([
   {
