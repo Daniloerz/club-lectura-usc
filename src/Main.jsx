@@ -9,7 +9,8 @@ import LandingPage from './components/LandingPage';
 import BookInformation from './components/BookInformation';
 import FindClubs from './components/FindClubs';
 import ClubInfo from './components/ClubInfo';
-import Dashboard from './components/dashboard/Dashboard';
+import AdminSection from './components/dashboard/AdminSection';
+import UserSection from './components/dashboard/UserSection';
 
 const router = createBrowserRouter([
   {
@@ -47,10 +48,14 @@ const router = createBrowserRouter([
     element: <ClubInfo />,
     errorElement: <h1>Error</h1>,
   },
-  ,
   {
-    path: "/dashboardadmin",
-    element: <Dashboard />,
+    path: "/AdminSection",
+    element: <AdminSection />,
+    errorElement: <h1>Error</h1>,
+  },
+  {
+    path: "/user",
+    element: <UserSection />,
     errorElement: <h1>Error</h1>,
   },
 ]);

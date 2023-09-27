@@ -9,6 +9,7 @@ import { TextField } from '@mui/material';
 import SignInSide from './SignInSide';
 import SignUp from './SignUp';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import MenuHeader from './MenuHeader';
 
 
 const router = createBrowserRouter([
@@ -30,13 +31,6 @@ function Header(props) {
   return (
     <React.Fragment>
       <Toolbar sx={{ magin: '0', backgroundColor: '#004B87', borderBottom: 1, borderColor: 'divider' }}>
-        <Button 
-        variant="outlined" 
-        size="small" 
-        sx={{ color: 'white', borderColor:'white' }}
-        href='/login'>
-          Iniciar Sesión
-          </Button>
         <Typography
           component="h2"
           variant="h5"
@@ -47,18 +41,7 @@ function Header(props) {
         >
           {title}
         </Typography>
-        <TextField id="standard-basic" label="Search" variant="standard" />
-        <IconButton>
-          <SearchIcon className="toolBarFormat"/>
-        </IconButton>
-        <Button 
-        variant="outlined" 
-        size="small" 
-        className="toolBarFormat" 
-        sx={{ color: 'white', borderColor:'white' }}
-        href='/signup'>
-          Registrarse
-        </Button>
+       <MenuHeader />
       </Toolbar>
     </React.Fragment>
   );
