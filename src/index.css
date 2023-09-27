@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+.toolBarFormat{ 
+    color: white; 
+    border-color:white 
+}
+
+.backgroundImageHome {
+    background-image: linear-gradient(rgba(255,255,255,0.5),
+    rgba(255,255,255,0.5)), url(https://source.unsplash.com/random?books)
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: white;
+}
+
+.css-kglq79-MuiRating-root .MuiRating-iconEmpty .MuiSvgIcon-root,
+.css-1wxstni-MuiSvgIcon-root {
+    font-size: 3rem;
+    
+   
+}
+
+.css-kglq79-MuiRating-root {
+    margin: auto;
+}
