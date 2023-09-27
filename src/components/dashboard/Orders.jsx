@@ -8,44 +8,22 @@ import TableRow from '@mui/material/TableRow';
 import Title from './Title';
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(id, titulo, autor, anio, editorial, isbn, sinopsis, jpg, estado) {
+  return { id, titulo, autor, anio, editorial, isbn, sinopsis, jpg, estado };
 }
 
 const rows = [
   createData(
     0,
-    '16 Mar, 2019',
-    'Elvis Presley',
-    'Tupelo, MS',
-    'VISA ⠀•••• 3719',
-    312.44,
-  ),
-  createData(
-    1,
-    '16 Mar, 2019',
-    'Paul McCartney',
-    'London, UK',
-    'VISA ⠀•••• 2574',
-    866.99,
-  ),
-  createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
-  createData(
-    3,
-    '16 Mar, 2019',
-    'Michael Jackson',
-    'Gary, IN',
-    'AMEX ⠀•••• 2000',
-    654.39,
-  ),
-  createData(
-    4,
-    '15 Mar, 2019',
-    'Bruce Springsteen',
-    'Long Branch, NJ',
-    'VISA ⠀•••• 5919',
-    212.79,
-  ),
+    'Cien años de soledad',
+    'Gabo',
+    '1999',
+    'Tupelo',
+    '3719',
+    'ABCDE',
+    'imagen',
+    'disponible',
+  )
 ];
 
 function preventDefault(event) {
@@ -55,31 +33,39 @@ function preventDefault(event) {
 export default function Orders() {
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Title>Información</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Id</TableCell>
+            <TableCell>Titulo</TableCell>
+            <TableCell>Autor</TableCell>
+            <TableCell>Año</TableCell>
+            <TableCell>Editorial</TableCell>
+            <TableCell>ISBN</TableCell>
+            <TableCell>Sinopsis</TableCell>
+            <TableCell>Portada</TableCell>
+            <TableCell>Estado</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
+              <TableCell>{row.id}</TableCell>
+              <TableCell>{row.titulo}</TableCell>
+              <TableCell>{row.autor}</TableCell>
+              <TableCell>{row.anio}</TableCell>
+              <TableCell>{row.editorial}</TableCell>
+              <TableCell>{row.isbn}</TableCell>
+              <TableCell>{row.sinopsis}</TableCell>
+              <TableCell>{row.jpg}</TableCell>
+              <TableCell>{row.estado}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
       <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
+        Ver mas!
       </Link>
     </React.Fragment>
   );
