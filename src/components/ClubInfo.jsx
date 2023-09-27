@@ -19,7 +19,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Footer from './Footer';
 import Rating from './Rating'; 
 import Comments from './Comments'; 
-import portada from '../img/portadas-libros.jpg'
+import portada from '../img/club-de-lectura.jpeg'
 
 
 
@@ -41,7 +41,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        usc.edu.co
+      usc.edu.co
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -78,19 +78,19 @@ export default function Album({titulo, autor}) {
           color="black"
           component="p"
         >
-          <b>Título del Libro:</b> {titulo}
+          <b>Nombre del club:</b> {titulo}
           <br></br>
-          <b>Autor:</b> {autor}
+          <b>Principal Responsable:</b> {autor}
           <br></br>
-          <b>Año de Publicación:</b> {autor}
+          <b>Año de Creación:</b> {autor}
           <br></br>
-          <b>Género:</b> {autor}
+          <b>Géneros principales:</b> {autor}
           <br></br>
-          <b>Editorial:</b> {autor}
+          <b>Periodicidad de reuniones:</b> {autor}
           <br></br>
-          <b>ISBN:</b> {autor}
+          <b>Cantidad de Integrantes:</b> {autor}
           <br></br>
-          <b>Sinopsis:</b> {autor}
+          <b>Descripción:</b> {autor}
         </Typography>
         </Container>
         <Container sx={{display: 'flex', flexDirection: 'column'}}>
@@ -102,7 +102,7 @@ export default function Album({titulo, autor}) {
           noWrap
           sx={{ flex: 1, color: 'black', fontSize: 30, color: '#004B87', padding: 5 }}
         >
-          Califica el libro
+          Califica el Club
         </Typography>
         <Rating />
         <TextField sx={{margin: 5}} id="outlined-basic" label="Comentarios" variant="outlined" />  

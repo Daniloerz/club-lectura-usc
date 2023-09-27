@@ -26,3 +26,11 @@ body {
 .css-kglq79-MuiRating-root {
     margin: auto;
 }
+
+.css-1wp00cw-MuiTypography-root {
+    padding: 30px;
+    height: 432px;
+    width: 500px;
+    color: white;
+    border-style: ridge;
+}

@@ -17,10 +17,6 @@ import IconButton from '@mui/material/IconButton';
 import { TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import Footer from './Footer';
-import Rating from './Rating'; 
-import Comments from './Comments'; 
-import portada from '../img/portadas-libros.jpg'
-
 
 
 const sections = [
@@ -41,7 +37,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        usc.edu.co
+        Your Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -49,68 +45,81 @@ function Copyright() {
   );
 }
 
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 const defaultTheme = createTheme();
 
-export default function Album({titulo, autor}) {
+export default function Album() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <HeaderLandingPage title="Club de lectura - USC" sections={sections}/>
-        <Container sx={{ py: 8, display: 'flex', alignItems: 'center'}} >
-        <Card
-                  sx={{ marginRight: 10, display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardMedia
-                    sx={{
-                      pt: '100%',
-                    }}
-                    image={portada}
-                  />
-                  <CardContent sx={{maxHeight: 1000, marginRight: 50}} >
-                  </CardContent>
-                  <CardActions sx={{backgroundColor: '#004B87', display: 'flex', justifyContent: 'space-around'}}>
-                    <Button  size="small" sx={{color: 'white'}}>Ver</Button>
-                    <Button  size="small" sx={{color: 'white'}}>Añadir</Button>
-                  </CardActions>
-                </Card>
-        <Typography
-          variant="subtitle1"
-          color="black"
-          component="p"
+      <main>
+        <Box
+          sx={{
+            bgcolor: 'background.paper',
+            pt: 8,
+            pb: 6,
+          }}
         >
-          <b>Título del Libro:</b> {titulo}
-          <br></br>
-          <b>Autor:</b> {autor}
-          <br></br>
-          <b>Año de Publicación:</b> {autor}
-          <br></br>
-          <b>Género:</b> {autor}
-          <br></br>
-          <b>Editorial:</b> {autor}
-          <br></br>
-          <b>ISBN:</b> {autor}
-          <br></br>
-          <b>Sinopsis:</b> {autor}
-        </Typography>
-        </Container>
-        <Container sx={{display: 'flex', flexDirection: 'column'}}>
+          <Container maxWidth="sm">
+          <TextField id="standard-basic" label="Buscar Club" variant="standard" sx={{width: 500}} />
+        <IconButton>
+          <SearchIcon sx={{color: '#004B87'}}/>
+        </IconButton>
+            <Stack
+              sx={{ pt: 4 }}
+              direction="row"
+              spacing={2}
+              justifyContent="center"
+            >
+              <Button variant="contained">Búsqueda avanzada</Button>
+             
+            </Stack>
+          </Container>
+        </Box>
         <Typography
           component="h2"
           variant="h5"
           color="inherit"
           align="center"
           noWrap
-          sx={{ flex: 1, color: 'black', fontSize: 30, color: '#004B87', padding: 5 }}
+          sx={{ flex: 1, color: 'black', fontSize: 30, color: '#004B87' }}
         >
-          Califica el libro
+          Clubs de Lectura
         </Typography>
-        <Rating />
-        <TextField sx={{margin: 5}} id="outlined-basic" label="Comentarios" variant="outlined" />  
-        <Button variant="contained" sx={{margin: 'auto', maxWidth: 100, marginBottom: 5}}>Enviar</Button>      
+        <Container sx={{ py: 8 }} maxWidth="md">
+          <Grid container spacing={4}>
+            {cards.map((card) => (
+              <Grid item key={card} xs={12} sm={6} md={4}>
+                <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                  <CardMedia
+                    component="div"
+                    sx={{
+                      // 16:9
+                      pt: '56.25%',
+                    }}
+                    image="https://source.unsplash.com/random?groups"
+                  />
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Nombre del Club
+                    </Typography>
+                    <Typography>
+                      Corta descripción del club
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small">Ver</Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
-        <Container>
-          <Comments />
-        </Container>
+      </main>
       <Footer title="Universidad Santiago de Cali"
                 description="Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional.
         Personería jurídica otorgada por el Ministerio de Justicia mediante la Resolución No. 2.800 del 02 de septiembre de 1959.

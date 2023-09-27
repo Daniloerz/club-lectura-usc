@@ -7,6 +7,9 @@ import SignInSide from './components/SignInSide';
 import SignUp from './components/SignUp';
 import LandingPage from './components/LandingPage';
 import BookInformation from './components/BookInformation';
+import FindClubs from './components/FindClubs';
+import ClubInfo from './components/ClubInfo';
+import Dashboard from './components/dashboard/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +36,23 @@ const router = createBrowserRouter([
     path: "/bookInfo",
     element: <BookInformation />,
     errorElement: <h1>Error</h1>,
-  }
+  },
+  {
+    path: "/findclubs",
+    element: <FindClubs />,
+    errorElement: <h1>Error</h1>,
+  },
+  {
+    path: "/clubinfo",
+    element: <ClubInfo />,
+    errorElement: <h1>Error</h1>,
+  },
+  ,
+  {
+    path: "/dashboardadmin",
+    element: <Dashboard />,
+    errorElement: <h1>Error</h1>,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
