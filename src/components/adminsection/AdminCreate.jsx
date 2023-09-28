@@ -17,11 +17,13 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import SelectTypeItem from './SelectTypeItem';
-import InfoTableAdmin from './InfoTableAdmin';
-import MenuHeader from '../MenuHeader';
+import { mainListItemsAdmin, secondaryListItemsAdmin } from './ListItemsAdmin';
+import Chart from '../dashboard/Chart';
+import SelectTypeItem from '../dashboard/SelectTypeItem';
+import InfoTableAdmin from '../dashboard/InfoTableAdmin';
+import MenuHeaderHome from '../MenuHeaderHome';
+
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -83,7 +85,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const defaultTheme = createTheme();
 
-export default function Dashboard() {
+export default function AdminCreate() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -125,7 +127,7 @@ export default function Dashboard() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-           <MenuHeader />
+           <MenuHeaderHome />
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -143,9 +145,9 @@ export default function Dashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            {mainListItemsAdmin}
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            {secondaryListItemsAdmin}
           </List>
         </Drawer>
         <Box

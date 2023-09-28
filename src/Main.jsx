@@ -5,12 +5,18 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from './components/Home';
 import SignInSide from './components/SignInSide';
 import SignUp from './components/SignUp';
-import LandingPage from './components/LandingPage';
-import BookInformation from './components/BookInformation';
+import VisitorPage from './components/visitor/VisitorPage';
+import BookInfoVisitor from './components/visitor/BookInfoVisitor';
 import FindClubs from './components/FindClubs';
-import ClubInfo from './components/ClubInfo';
-import AdminSection from './components/dashboard/AdminSection';
-import UserSection from './components/dashboard/UserSection';
+import ClubInfoVisitor from './components/visitor/ClubInfoVisitor';
+import AdminCreate from './components/adminsection/AdminCreate';
+import AdminProfile from './components/adminsection/AdminProfile';
+import UserSection from './components/users/UserSection';
+import SearchBook from './components/users/SearchBook';
+import SearchClub from './components/users/SearchClub';
+import SearchBookAdmin from './components/adminsection/SearchBookAdmin';
+import SearchClubAdmin from './components/adminsection/SearchClubAdmin';
+
 
 const router = createBrowserRouter([
   {
@@ -29,13 +35,13 @@ const router = createBrowserRouter([
     errorElement: <h1>Error</h1>,
   },
   {
-    path: "/landingpage",
-    element: <LandingPage />,
+    path: "/visitor",
+    element: <VisitorPage />,
     errorElement: <h1>Error</h1>,
   },
   {
-    path: "/bookInfo",
-    element: <BookInformation />,
+    path: "/bookinfov",
+    element: <BookInfoVisitor />,
     errorElement: <h1>Error</h1>,
   },
   {
@@ -44,18 +50,43 @@ const router = createBrowserRouter([
     errorElement: <h1>Error</h1>,
   },
   {
-    path: "/clubinfo",
-    element: <ClubInfo />,
+    path: "/clubinfov",
+    element: <ClubInfoVisitor />,
     errorElement: <h1>Error</h1>,
   },
   {
-    path: "/AdminSection",
-    element: <AdminSection />,
+    path: "/admin+",
+    element: <AdminCreate />,
+    errorElement: <h1>Error</h1>,
+  },
+  {
+    path: "/admin1",
+    element: <AdminProfile />,
+    errorElement: <h1>Error</h1>,
+  },
+  {
+    path: "/bookadmin",
+    element: <SearchBookAdmin />,
+    errorElement: <h1>Error</h1>,
+  },
+  {
+    path: "/clubadmin",
+    element: <SearchClubAdmin />,
     errorElement: <h1>Error</h1>,
   },
   {
     path: "/user",
     element: <UserSection />,
+    errorElement: <h1>Error</h1>,
+  },
+  {
+    path: "/book",
+    element: <SearchBook />,
+    errorElement: <h1>Error</h1>,
+  },
+  {
+    path: "/club",
+    element: <SearchClub />,
     errorElement: <h1>Error</h1>,
   },
 ]);

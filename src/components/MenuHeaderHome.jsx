@@ -8,11 +8,9 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+import Link from '@mui/material/Link';
 import LoginIcon from '@mui/icons-material/Login';
-import Face6Icon from '@mui/icons-material/Face6';
+import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -32,7 +30,7 @@ export default function AccountMenu() {
           <IconButton
             onClick={handleClick}
             size="small"
-            sx={{ ml: 2 }}
+            sx={{ ml: 2, padding: 0, marginLeft: 0, }}
             aria-controls={open ? 'account-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
@@ -77,27 +75,21 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> Iniciar Sesión
+          <Avatar /> 
+          <Link href="/login" underline="none" color="inherit">
+          Iniciar Sesión
+          </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Avatar /> Registrarse
+          <Avatar /> 
+          <Link href="/signup" underline="none" color="inherit">
+          Registrarse
+          </Link>
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Administrador
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Administrador
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Logout fontSize="small" />
+            <HelpCenterIcon fontSize="small" />
           </ListItemIcon>
           Ayuda
         </MenuItem>
