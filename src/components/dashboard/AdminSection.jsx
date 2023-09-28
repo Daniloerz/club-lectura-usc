@@ -19,8 +19,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import SelectTypeItem from './SelectTypeItem';
+import InfoTableAdmin from './InfoTableAdmin';
 import MenuHeader from '../MenuHeader';
 function Copyright(props) {
   return (
@@ -93,10 +93,10 @@ export default function Dashboard() {
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
+        <AppBar position="absolute" open={open} sx={{bgcolor: '#004B87' }}>
           <Toolbar
             sx={{
-              pr: '24px', 
+              pr: '24px',
             }}
           >
             <IconButton
@@ -163,7 +163,7 @@ export default function Dashboard() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Recent Deposits */}
+              {/* Recent SelectTypeItem */}
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
@@ -173,10 +173,10 @@ export default function Dashboard() {
                     height: 240,
                   }}
                 >
-                  <Deposits />
+                  <SelectTypeItem />
                 </Paper>
               </Grid>
-              {/* Recent Orders */}
+              {/* Recent InfoTableAdmin */}
               {/* Chart */}
               <Grid item xs={12} md={8} lg={9}>
                 <Paper
@@ -193,7 +193,7 @@ export default function Dashboard() {
               
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
+                  <InfoTableAdmin />
                 </Paper>
               </Grid>
             </Grid>
