@@ -9,7 +9,7 @@ import { TextField } from '@mui/material';
 import SignInSide from './SignInSide';
 import SignUp from './SignUp';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import MenuHeader from './MenuHeader';
+import MenuHeaderHome from './MenuHeaderHome';
 
 
 const router = createBrowserRouter([
@@ -35,13 +35,13 @@ function Header(props) {
           component="h2"
           variant="h5"
           color="inherit"
-          align="center"
+          align="start"
           noWrap
           sx={{ flex: 1, color: 'white' }}
         >
           {title}
         </Typography>
-       <MenuHeader />
+       <MenuHeaderHome />
       </Toolbar>
     </React.Fragment>
   );

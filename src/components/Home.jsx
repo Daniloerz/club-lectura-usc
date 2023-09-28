@@ -29,6 +29,7 @@ const featuredPosts = [
             'En esta sección encontrarás los libros disponibles en nuestra biblioteca virtual',
         image: 'https://source.unsplash.com/random?books',
         imageLabel: 'Image Text',
+        url: '/visitor',
     },
     {
         title: 'Explorar Clubes de lectura',
@@ -36,6 +37,8 @@ const featuredPosts = [
             'Aquí podrás conocer los clubes de lectura que tenemos en la USC',
         image: 'https://source.unsplash.com/random?books',
         imageLabel: 'Image Text',
+        url: '/visitor',
+
     },
 ];
 

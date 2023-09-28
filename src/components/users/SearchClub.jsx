@@ -9,31 +9,15 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import SelectTypeItem from './SelectTypeItem';
-import InfoTableAdmin from './InfoTableAdmin';
-import MenuHeader from '../MenuHeader';
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        usc.edu.co
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { mainListItemsUser, secondaryListItemsUser } from './ListItemsUser';
+import Footer from '../Footer';
+import SearchClubForm from './SearchClubForm';
+import { Container } from '@mui/material';
+import BooksSearched from './InfoSearched';
+
+
 
 const drawerWidth = 240;
 
@@ -83,7 +67,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const defaultTheme = createTheme();
 
-export default function Dashboard() {
+export default function SearchClub() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -137,13 +121,13 @@ export default function Dashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            {mainListItemsUser}
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            {secondaryListItemsUser}
           </List>
         </Drawer>
+
         <Box
-          component="main"
           sx={{
             backgroundColor: (theme) =>
               theme.palette.mode === 'light'
@@ -155,46 +139,36 @@ export default function Dashboard() {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Recent SelectTypeItem */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <SelectTypeItem />
-                </Paper>
-              </Grid>
-              {/* Recent InfoTableAdmin */}
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Chart />
-                </Paper>
-              </Grid>
-              
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <InfoTableAdmin />
-                </Paper>
-              </Grid>
-            </Grid>
-            <Copyright sx={{ pt: 4 }} />
+          <Container display='flex'>
+          <SearchClubForm />
+          <BooksSearched /> 
           </Container>
         </Box>
       </Box>
+      <Footer
+                title="Universidad Santiago de Cali"
+                description="Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional.
+        Personería jurídica otorgada por el Ministerio de Justicia mediante la Resolución No. 2.800 del 02 de septiembre de 1959.
+        Reconocida como Universidad por el Decreto No. 1297 de 1964 emanado del Ministerio de Educación Nacional.
+        
+        Acreditada Institucionalmente en Alta Calidad a través de la Resolución No. 018144 del 27 de septiembre de 2021, emanada por el Ministerio de Educación Nacional.
+        Ciudadela Pampalinda
+        Calle 5 # 62-00 Barrio Pampalinda
+        PBX: +57 (602) 518 3000
+        Santiago de Cali, Valle del Cauca
+        Colombia        
+
+        Sede Centro
+        Carrera 8 # 8-17 Barrio Santa Rosa
+        PBX: +57 (602) 518 3000
+        Santiago de Cali, Valle del Cauca
+        Colombia
+
+        Seccional Palmira
+        Carrera 29 # 38-47 Barrio Alfonso López
+        PBX: +57 (602) 518 3000 Ext. 9300-9301
+        Palmira, Valle del Cauca
+        Colombia"/>
     </ThemeProvider>
   );
 }

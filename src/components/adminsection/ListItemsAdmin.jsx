@@ -3,23 +3,20 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PeopleIcon from '@mui/icons-material/People';
-import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
-import AssignmentIcon from '@mui/icons-material/Assignment';
 import SearchIcon from '@mui/icons-material/Search';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import DeleteIcon from '@mui/icons-material/Delete';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
 
-export const mainListItems = (
+export const mainListItemsAdmin = (
   <React.Fragment>
     <ListSubheader component="div" inset>
       Panel del admin
     </ListSubheader>
-    <ListItemButton>
+    <ListItemButton href='/admin+'>
       <ListItemIcon>
       <AddBoxIcon />
       </ListItemIcon>
@@ -43,37 +40,37 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Buscar" />
     </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Integrations" />
-    </ListItemButton>
   </React.Fragment>
 );
 
-export const secondaryListItems = (
+export const secondaryListItemsAdmin = (
   <React.Fragment>
     <ListSubheader component="div" inset>
-      Saved reports
+      Sección Común
     </ListSubheader>
-    <ListItemButton>
+    <ListItemButton href='/bookadmin'>
       <ListItemIcon>
-        <AssignmentIcon />
+      <SearchIcon />
       </ListItemIcon>
-      <ListItemText primary="Current month" />
+      <ListItemText primary="Buscar Libro" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href='/clubAdmin'>
       <ListItemIcon>
-        <AssignmentIcon />
+      <SearchIcon />
       </ListItemIcon>
-      <ListItemText primary="Last quarter" />
+      <ListItemText primary="Buscar Club" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href='/admin1'>
       <ListItemIcon>
-        <AssignmentIcon />
+      <AccountCircleIcon />
       </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      <ListItemText primary="Perfil" />
+    </ListItemButton>
+    <ListItemButton href='/'>
+      <ListItemIcon>
+      <LogoutIcon />
+      </ListItemIcon>
+      <ListItemText primary="Salir" />
     </ListItemButton>
   </React.Fragment>
 );

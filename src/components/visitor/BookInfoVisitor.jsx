@@ -5,36 +5,16 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import HeaderLandingPage from './HeaderLandingPage';
-import IconButton from '@mui/material/IconButton';
-import { TextField } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import Footer from './Footer';
-import Rating from './Rating'; 
-import Comments from './Comments'; 
-import portada from '../img/portadas-libros.jpg'
-
-
-
-const sections = [
-    { title: 'Drama', url: '#' },
-    { title: 'Ficción', url: '#' },
-    { title: 'Historia', url: '#' },
-    { title: 'Ciencia', url: '#' },
-    { title: 'Internacionales', url: '#' },
-    { title: 'Locales', url: '#' },
-    { title: 'Romance', url: '#' },
-    { title: 'Aventura', url: '#' },
-    { title: 'Infantiles', url: '#' },
-    { title: 'Poesía', url: '#' },
-  ];
+import { Divider, TextField } from '@mui/material';
+import Footer from '../Footer';
+import Rating from '../Rating'; 
+import Comments from '../Comments'; 
+import portada from '../../img/portadas-libros.jpg'
+import Header from '../Header';
   
 function Copyright() {
   return (
@@ -51,48 +31,37 @@ function Copyright() {
 
 const defaultTheme = createTheme();
 
-export default function Album({titulo, autor}) {
+export default function BookInfoVisitor({titulo, autor}) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <HeaderLandingPage title="Club de lectura - USC" sections={sections}/>
-        <Container sx={{ py: 8, display: 'flex', alignItems: 'center'}} >
-        <Card
-                  sx={{ marginRight: 10, display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardMedia
-                    sx={{
-                      pt: '100%',
-                    }}
-                    image={portada}
-                  />
-                  <CardContent sx={{maxHeight: 1000, marginRight: 50}} >
-                  </CardContent>
-                  <CardActions sx={{backgroundColor: '#004B87', display: 'flex', justifyContent: 'space-around'}}>
-                    <Button  size="small" sx={{color: 'white'}}>Ver</Button>
-                    <Button  size="small" sx={{color: 'white'}}>Añadir</Button>
-                  </CardActions>
-                </Card>
+      <Header title="Club de Lectura - USC"/>
+      <Container sx={{ py: 8, display: 'flex', alignItems: 'center'}} >
+      {<img style={{ display: 'block', marginRight: 20, height: 500, borderStyle: 'groove'}} src= {portada} alt='logoUsc' />}
+
         <Typography
           variant="subtitle1"
           color="black"
           component="p"
+          sx={{height:500, width: 800, padding: 5, borderStyle: 'double', backgroundColor: 'rgb(0, 75, 135,0.75)'}}
         >
+          
           <b>Título del Libro:</b> {titulo}
-          <br></br>
+          <Divider/>
           <b>Autor:</b> {autor}
-          <br></br>
+          <Divider/>
           <b>Año de Publicación:</b> {autor}
-          <br></br>
+          <Divider/>
           <b>Género:</b> {autor}
-          <br></br>
+          <Divider/>
           <b>Editorial:</b> {autor}
-          <br></br>
+          <Divider/>
           <b>ISBN:</b> {autor}
-          <br></br>
+          <Divider/>
           <b>Sinopsis:</b> {autor}
         </Typography>
         </Container>
+        <Divider/>
         <Container sx={{display: 'flex', flexDirection: 'column'}}>
         <Typography
           component="h2"
@@ -102,13 +71,10 @@ export default function Album({titulo, autor}) {
           noWrap
           sx={{ flex: 1, color: 'black', fontSize: 30, color: '#004B87', padding: 5 }}
         >
-          Califica el libro
+          Comentarios y Reseñas
         </Typography>
-        <Rating />
-        <TextField sx={{margin: 5}} id="outlined-basic" label="Comentarios" variant="outlined" />  
-        <Button variant="contained" sx={{margin: 'auto', maxWidth: 100, marginBottom: 5}}>Enviar</Button>      
-        </Container>
-        <Container>
+        </Container >
+        <Container sx={{marginBottom: 5}}>
           <Comments />
         </Container>
       <Footer title="Universidad Santiago de Cali"

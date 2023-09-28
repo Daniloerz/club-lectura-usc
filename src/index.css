@@ -34,3 +34,12 @@ body {
     color: white;
     border-style: ridge;
 }
+
+.css-1oqqzyl-MuiContainer-root {
+    display: flex!important;
+}
+
+.css-16d4vfr-MuiPaper-root{
+    margin-right: 100px!important;
+}
+

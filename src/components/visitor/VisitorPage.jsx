@@ -1,23 +1,16 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import HeaderLandingPage from './HeaderLandingPage';
-import IconButton from '@mui/material/IconButton';
+import Header from '../Header';
 import { TextField } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import Footer from './Footer';
-
+import Footer from '../Footer';
+import ContentVisitor from './ContentVisitor';
 
 const sections = [
     { title: 'Drama', url: '#' },
@@ -31,29 +24,17 @@ const sections = [
     { title: 'Infantiles', url: '#' },
     { title: 'Poesía', url: '#' },
   ];
-  
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const defaultTheme = createTheme();
 
-export default function Album() {
+export default function VisitorPage() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <HeaderLandingPage title="Club de lectura - USC" sections={sections}/>
+      <Header title="Club de Lectura - USC"/>
       <main>
         <Box
           sx={{
@@ -63,63 +44,20 @@ export default function Album() {
           }}
         >
           <Container maxWidth="sm">
-          <TextField id="standard-basic" label="Buscar Libro" variant="standard" sx={{width: 500}} />
-        <IconButton>
-          <SearchIcon sx={{color: '#004B87'}}/>
-        </IconButton>
+          <TextField id="standard-basic" label="Buscar por palabra clave" variant="standard" sx={{width: 500}} />
             <Stack
               sx={{ pt: 4 }}
               direction="row"
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Búsqueda avanzada</Button>
+              <Button variant="contained">Buscar</Button>
              
             </Stack>
           </Container>
         </Box>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          sx={{ flex: 1, color: 'black', fontSize: 30, color: '#004B87' }}
-        >
-          Recomendaciones
-        </Typography>
-        <Container sx={{ py: 8 }} maxWidth="md">
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardMedia
-                    component="div"
-                    sx={{
-                      // 16:9
-                      pt: '56.25%',
-                    }}
-                    image="https://source.unsplash.com/random?cover"
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Nombre del libro
-                    </Typography>
-                    <Typography>
-                      Corta descripción del libro
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">Ver</Button>
-                    <Button size="small">Añadir</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+        <ContentVisitor items={cards} title={'Libros'} name={'Libro'} url={'/bookinfov'}/>
+        <ContentVisitor items={cards} title={'Clubes de lectura'} name={'Club'} url={'/clubinfov'}/>
       </main>
       <Footer title="Universidad Santiago de Cali"
                 description="Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional.

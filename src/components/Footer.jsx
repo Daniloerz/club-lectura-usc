@@ -23,7 +23,7 @@ function Footer(props) {
 
   return (
     <Box component="footer" sx={{ bgcolor: '#182039', py: 3, color: 'white'}}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{display: 'flex', flexDirection:'column'}}>
       {<img style={{ display: 'block', margin: 'auto', paddingBottom: 30}} src='https://www.usc.edu.co/wp-content/uploads/2023/03/Logo_Universidad_Santiago_de_Cali_USC-1.png' alt='logoUsc' />}
         <Typography variant="h6" align="center" gutterBottom>
         <Link href="https://www.usc.edu.co/" variant="body1" sx={{color: 'white'}}>
