@@ -3,13 +3,12 @@ import Box from '@mui/material/Box';
 import Input from '@mui/material/Input';
 import TextField from '@mui/material/TextField';
 import SelectCategory from './SelectCategory';
-import Grid from '@mui/material/Grid';
 
 
 
 const ariaLabel = { 'aria-label': 'description' };
 
-export default function Inputs() {
+export default function CreateBook() {
   return (
     <Box
       component="form"
@@ -23,8 +22,10 @@ export default function Inputs() {
       <Input placeholder="Autor" inputProps={ariaLabel} />
       <Input placeholder="Año" inputProps={ariaLabel} />
       <Input placeholder="Editorial" inputProps={ariaLabel} />
-      <Input placeholder="ISBN" inputProps={ariaLabel} />   
-      <SelectCategory />  
+      <Input placeholder="ISBN" inputProps={ariaLabel} />
+      <Input placeholder="Link img" inputProps={ariaLabel} />
+      <Input placeholder="Link Acceso" inputProps={ariaLabel} />
+      <SelectCategory labelName={'Categoría'}/>  
       <TextField fullWidth label="Sinopsis" id="sinopsis"/>
       
       

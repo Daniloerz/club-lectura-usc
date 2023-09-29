@@ -7,9 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
 
-// Generate Order Data
-function createData(id, titulo, autor, anio, editorial, isbn, sinopsis, jpg, estado) {
-  return { id, titulo, autor, anio, editorial, isbn, sinopsis, jpg, estado };
+function createData(id, titulo, autor, anio, editorial, isbn, category, sinopsis, jpg, accessLink) {
+  return { id, titulo, autor, anio, editorial, isbn, category, sinopsis, jpg, accessLink };
 }
 
 const rows = [
@@ -21,8 +20,9 @@ const rows = [
     'Tupelo',
     '3719',
     'ABCDE',
-    'imagen',
-    'disponible',
+    'Drama',
+    'imagen.jpg',
+    'link',
   )
 ];
 
@@ -30,7 +30,7 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function Orders() {
+export default function CreateBookTableInfo() {
   return (
     <React.Fragment>
       <Title>Información</Title>
@@ -43,9 +43,10 @@ export default function Orders() {
             <TableCell>Año</TableCell>
             <TableCell>Editorial</TableCell>
             <TableCell>ISBN</TableCell>
+            <TableCell>Categoría</TableCell>
             <TableCell>Sinopsis</TableCell>
-            <TableCell>Portada</TableCell>
-            <TableCell>Estado</TableCell>
+            <TableCell>Img</TableCell>
+            <TableCell>Acceso</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -58,8 +59,17 @@ export default function Orders() {
               <TableCell>{row.editorial}</TableCell>
               <TableCell>{row.isbn}</TableCell>
               <TableCell>{row.sinopsis}</TableCell>
-              <TableCell>{row.jpg}</TableCell>
-              <TableCell>{row.estado}</TableCell>
+              <TableCell>{row.category}</TableCell>
+              <TableCell>
+                <Link href={row.jpg}>
+                  portada
+                </Link>
+              </TableCell>
+              <TableCell>
+                <Link href={row.accessLink}>
+                  Leer
+                </Link>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

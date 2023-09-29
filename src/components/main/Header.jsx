@@ -1,11 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
-import { TextField } from '@mui/material';
 import SignInSide from './SignInSide';
 import SignUp from './SignUp';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";

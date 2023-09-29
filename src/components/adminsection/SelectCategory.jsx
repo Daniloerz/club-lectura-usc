@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function BasicSelect() {
+export default function SelectCategory({labelName}) {
   const [type, setType] = React.useState('');
 
   const handleChange = (event) => {
@@ -13,13 +13,13 @@ export default function BasicSelect() {
   };
 
   return (
-      <FormControl sx={{ minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small-label">Categoría</InputLabel>
+      <FormControl sx={{ width: 250 }} size="small">
+        <InputLabel id="demo-select-small-label">{labelName}</InputLabel>
         <Select
           labelId="demo-select-small-label"
           id="demo-select-small"
           value={type}
-          label="Categoría"
+          label={labelName}
           onChange={handleChange}
         >
           <MenuItem value='drama'>Drama</MenuItem>

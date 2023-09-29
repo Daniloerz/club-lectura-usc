@@ -1,16 +1,14 @@
 import * as React from 'react';
-import SearchClubForm from '../users/SearchClubForm';
+import SearchBookForm from '../users/SearchBookForm';
 import BooksSearched from '../users/InfoSearched';
 import Grid from '@mui/material/Grid';
 
-export default function SearchClub() {
+export default function SearchBook() {
 
   return (
-
     <Grid display='flex'>
-      <SearchClubForm />
+      <SearchBookForm />
       <BooksSearched />
     </Grid>
-
   );
 }

@@ -3,13 +3,13 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { Paper } from '@mui/material';
-import SelectCategory from '../dashboard/SelectCategory';
+import SelectCategory from '../adminsection/SelectCategory';
 import Button from '@mui/material/Button';
 
 export default function SearchClubForm() {
   return (
     <React.Fragment>
-        <Paper sx={{m: 5, p: 2, display: 'flex', flexDirection: 'column', maxWidth: '30%', alignItems: 'center'}}>
+        <Paper sx={{m: 5, p: 2, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Typography variant="h6" gutterBottom>
         Buscar Club
       </Typography>
@@ -25,7 +25,7 @@ export default function SearchClubForm() {
           />
         </Grid>
         <Grid item >
-          <SelectCategory />
+          <SelectCategory labelName={'Categoría'}/>
         </Grid>
       </Grid>
 
