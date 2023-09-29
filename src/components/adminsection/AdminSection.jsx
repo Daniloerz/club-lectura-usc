@@ -9,33 +9,19 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItemsAdmin, secondaryListItemsAdmin } from './ListItemsAdmin';
-import Chart from '../dashboard/Chart';
-import SelectTypeItem from '../dashboard/SelectTypeItem';
-import InfoTableAdmin from '../dashboard/InfoTableAdmin';
-import MenuHeaderHome from '../MenuHeaderHome';
+import { MainListItemsAdmin, SecondaryListItemsAdmin } from './ListItemsAdmin';
+import Footer from '../main/Footer';
+import CreateSection from './CreateSection';
+import ProfileInfo from './ProfileInfo';
+import SearchBook from './SearchBook';
+import SearchClub from './SearchClubAdmin';
+import EditSection from './EditSection';
+import SearchSection from './SearchSection';
+import DeleteSection from './DeleteSection';
 
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        usc.edu.co
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const drawerWidth = 240;
 
@@ -87,9 +73,35 @@ const defaultTheme = createTheme();
 
 export default function AdminCreate() {
   const [open, setOpen] = React.useState(true);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  function renderOption(){
+    if(selectedIndex === 0){
+      return <ProfileInfo />;
+    } else if (selectedIndex === 1){
+      return <CreateSection />;
+    } else if (selectedIndex === 2){
+      return <EditSection />;
+    } else if (selectedIndex === 3){
+      return <DeleteSection />;
+    } else if (selectedIndex === 4){
+      return <SearchSection />;
+    } else if (selectedIndex === 5){
+      return <SearchBook />;
+    } else if (selectedIndex === 6){
+      return <SearchClub />;
+    } else if (selectedIndex === 7){
+      return <ProfileInfo />;
+    }
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -120,14 +132,8 @@ export default function AdminCreate() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Panel de control
+              Zona del Admin
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-           <MenuHeaderHome />
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -144,10 +150,10 @@ export default function AdminCreate() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">
-            {mainListItemsAdmin}
+          <List component="nav" >
+            <MainListItemsAdmin onOptionChange={handleListItemClick}/>
             <Divider sx={{ my: 1 }} />
-            {secondaryListItemsAdmin}
+            <SecondaryListItemsAdmin onOptionChange={handleListItemClick}/>
           </List>
         </Drawer>
         <Box
@@ -164,45 +170,34 @@ export default function AdminCreate() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Recent SelectTypeItem */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <SelectTypeItem />
-                </Paper>
-              </Grid>
-              {/* Recent InfoTableAdmin */}
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Chart />
-                </Paper>
-              </Grid>
-              
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <InfoTableAdmin />
-                </Paper>
-              </Grid>
-            </Grid>
-            <Copyright sx={{ pt: 4 }} />
+             {renderOption()}
           </Container>
         </Box>
       </Box>
+      <Footer
+                title="Universidad Santiago de Cali"
+                description="Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional.
+        Personería jurídica otorgada por el Ministerio de Justicia mediante la Resolución No. 2.800 del 02 de septiembre de 1959.
+        Reconocida como Universidad por el Decreto No. 1297 de 1964 emanado del Ministerio de Educación Nacional.
+        
+        Acreditada Institucionalmente en Alta Calidad a través de la Resolución No. 018144 del 27 de septiembre de 2021, emanada por el Ministerio de Educación Nacional.
+        Ciudadela Pampalinda
+        Calle 5 # 62-00 Barrio Pampalinda
+        PBX: +57 (602) 518 3000
+        Santiago de Cali, Valle del Cauca
+        Colombia        
+
+        Sede Centro
+        Carrera 8 # 8-17 Barrio Santa Rosa
+        PBX: +57 (602) 518 3000
+        Santiago de Cali, Valle del Cauca
+        Colombia
+
+        Seccional Palmira
+        Carrera 29 # 38-47 Barrio Alfonso López
+        PBX: +57 (602) 518 3000 Ext. 9300-9301
+        Palmira, Valle del Cauca
+        Colombia"/>
     </ThemeProvider>
   );
 }

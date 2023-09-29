@@ -2,26 +2,12 @@ import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Header from '../Header';
-import Footer from '../Footer';
-import Comments from '../Comments'; 
+import Header from '../main/Header';
+import Footer from '../main/Footer';
+import Comments from '../main/Comments'; 
 import portada from '../../img/club-de-lectura.jpeg'
 import { Divider } from '@mui/material';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-      usc.edu.co
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const defaultTheme = createTheme();
 

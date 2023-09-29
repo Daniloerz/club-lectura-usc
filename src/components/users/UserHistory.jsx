@@ -5,7 +5,7 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import Grid from '@mui/material/Grid';
-import Title from '../dashboard/Title';
+import Title from '../adminsection/Title';
 import { Box, TableRow } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';

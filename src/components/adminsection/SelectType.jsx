@@ -5,13 +5,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function BasicSelect() {
+export default function SelectType({onChange}) {
+
   const [type, setType] = React.useState('');
-
-  const handleChange = (event) => {
-    setType(event.target.value);
-  };
-
+  
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
@@ -21,7 +18,7 @@ export default function BasicSelect() {
           id="demo-simple-select"
           value={type}
           label="Tipo"
-          onChange={handleChange}
+          onChange={onChange}
         >
           <MenuItem value='libro'>Libro</MenuItem>
           <MenuItem value='usuario'>Usuario</MenuItem>

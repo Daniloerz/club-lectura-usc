@@ -7,12 +7,14 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function Deposits() {
+
+
+export default function SelectTypeItem({onTypeChange}) {
+
   return (
     <React.Fragment>
       <Title>Seleccionar</Title>
-      <Type />    
-      <Button size="small" sx={{margin: 'auto'}}>Aplicar</Button>
+      <Type onChange={onTypeChange} />    
     </React.Fragment>
   );
 }

@@ -10,16 +10,13 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItemsUser, secondaryListItemsUser } from './ListItemsUser';
-import UserHistory from './UserHistory';
-import Avatar from '@mui/material/Avatar';
-import PersonalInformationUser from './PersonalInformationUser';
-import Footer from '../Footer';
+import { MainListItemsAdmin, SecondaryListItemsAdmin } from './ListItemsUser';
+import Footer from '../main/Footer';
+import ProfileInfo from '../adminsection/ProfileInfo';
+import SearchBook from '../adminsection/SearchBook';
+import SearchClub from '../adminsection/SearchClubAdmin';
 
 const drawerWidth = 240;
 
@@ -69,11 +66,29 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const defaultTheme = createTheme();
 
-export default function UserSection() {
+export default function AdminCreate() {
   const [open, setOpen] = React.useState(true);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  function renderOption(){
+    if(selectedIndex === 0){
+      return <ProfileInfo />;
+    } else if (selectedIndex === 5){
+      return <SearchBook />;
+    } else if (selectedIndex === 6){
+      return <SearchClub />;
+    } else if (selectedIndex === 7){
+      return <ProfileInfo />;
+    }
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -122,10 +137,10 @@ export default function UserSection() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">
-            {mainListItemsUser}
+          <List component="nav" >
+            <MainListItemsAdmin onOptionChange={handleListItemClick}/>
             <Divider sx={{ my: 1 }} />
-            {secondaryListItemsUser}
+            <SecondaryListItemsAdmin onOptionChange={handleListItemClick}/>
           </List>
         </Drawer>
         <Box
@@ -142,33 +157,7 @@ export default function UserSection() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-          <Grid container spacing={3}>
-              {/* Profile picture */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Avatar 
-                alt="Remy Sharp" 
-                src="https://source.unsplash.com/random?person" 
-                sx={{ width: 200, height: 200, margin: 'auto' }}/>
-              </Grid>
-              {/* Personal Information */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <PersonalInformationUser />
-                </Paper>
-              </Grid>
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                <UserHistory />
-                </Paper>
-              </Grid>
-            </Grid>
+             {renderOption()}
           </Container>
         </Box>
       </Box>

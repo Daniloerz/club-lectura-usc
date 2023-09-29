@@ -3,22 +3,22 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { Paper } from '@mui/material';
-import SelectCategory from '../adminsection/SelectCategory';
+import SelectCategory from './SelectCategory';
 import Button from '@mui/material/Button';
 
-export default function SearchBook() {
+export default function SearchUserForm() {
   return (
     <React.Fragment>
         <Paper sx={{m: 5, p: 2, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Typography variant="h6" gutterBottom>
-        Buscar Libro
+        Buscar Usuario
       </Typography>
       <Grid container spacing={3} display='inline-block' margin= 'auto' >
         <Grid item sm={10}>
           <TextField
-            id="titulo"
-            name="titulo"
-            label="Título"
+            id="documento"
+            name="documento"
+            label="Documento"
             fullWidth
             autoComplete="given-name"
             variant="standard"
@@ -27,16 +27,24 @@ export default function SearchBook() {
         <Grid item sm={10}>
           <TextField
             
-            id="autor"
-            name="autor"
-            label="Autor"
+            id="nombre"
+            name="nombre"
+            label="Nombre"
             fullWidth
             autoComplete="family-name"
             variant="standard"
           />
         </Grid>
-        <Grid item >
-          <SelectCategory labelName='Categoría'/>
+        <Grid item sm={10}>
+          <TextField
+            
+            id="email"
+            name="email"
+            label="Email"
+            fullWidth
+            autoComplete="family-name"
+            variant="standard"
+          />
         </Grid>
         
         

@@ -1,33 +1,13 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Divider, TextField } from '@mui/material';
-import Footer from '../Footer';
-import Rating from '../Rating'; 
-import Comments from '../Comments'; 
+import { Divider } from '@mui/material';
+import Footer from '../main/Footer';
+import Comments from '../main/Comments'; 
 import portada from '../../img/portadas-libros.jpg'
-import Header from '../Header';
-  
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        usc.edu.co
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Header from '../main/Header';
 
 const defaultTheme = createTheme();
 

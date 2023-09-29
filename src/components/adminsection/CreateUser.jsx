@@ -1,21 +1,18 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Input from '@mui/material/Input';
+import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Title from '../adminsection/Title';
 import FilledInput from '@mui/material/FilledInput';
 import IconButton from '@mui/material/IconButton';
 
-  
 const ariaLabel = { 'aria-label': 'description' };
 
-export default function PersonalInformationUser() {
+export default function CreateUser() {
+
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -25,14 +22,7 @@ export default function PersonalInformationUser() {
   };
 
   return (
-    <>
-    <Grid  container
-  direction="row"
-  justifyContent="space-between">
-      <Title>Información Personal</Title>
-      <Button variant="contained" size="small">Editar</Button>
-      </Grid>
-      <Box
+    <Box
       component="form"
       sx={{
         '& > :not(style)': { m: 1 },
@@ -40,12 +30,12 @@ export default function PersonalInformationUser() {
       noValidate
       autoComplete="off"
     >
-      <Input placeholder="Nombre" inputProps={ariaLabel} />  
+      <Input placeholder="Primer Nombre" inputProps={ariaLabel} />  
       <Input placeholder="Apellido" inputProps={ariaLabel} />
-      <Input placeholder="Email" inputProps={ariaLabel} type='email'/>
-      <Input placeholder="Teléfono" inputProps={ariaLabel} />
-      <Input placeholder="Fecha de nacimiento" inputProps={ariaLabel} type='Date'/> 
-      <br></br>
+      <Input placeholder="Email" inputProps={ariaLabel} />
+      <Input placeholder="Teléfono" inputProps={ariaLabel} />   
+      <Input placeholder="Documento ID" inputProps={ariaLabel} />   
+      <Input placeholder="Fecha de nacimiento" inputProps={ariaLabel} type='Date'/>
       <FormControl sx={{width: '25ch'}} variant="filled">
           <InputLabel htmlFor="filled-adornment-password" type='password'>Password</InputLabel>
           <FilledInput
@@ -66,7 +56,5 @@ export default function PersonalInformationUser() {
           />
         </FormControl>
     </Box>
-    </>
-    
   );
 }
