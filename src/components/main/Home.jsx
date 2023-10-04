@@ -6,12 +6,6 @@ import FeaturedPost from './FeaturedPost';
 import MainFeaturedPost from './MainFeaturedPost';
 import Footer from './Footer';
 
-const sections = [
-    { title: 'Home', url: '#' },
-    { title: 'Libros', url: '#' },
-    { title: 'Clubs', url: '#' }
-];
-
 const mainFeaturedPost = {
     title: '¡Bienvenidos al Club de Lectura de la Universidad Santiago de Cali!',
     description:
@@ -44,7 +38,7 @@ const featuredPosts = [
 export default function Home() {
     return (
         <>
-            <Header title="Club de Lectura - USC" sections={sections} />
+            <Header title="Club de Lectura - USC" />
             <MainFeaturedPost post={mainFeaturedPost} />
             <Grid container >
                 {featuredPosts.map((post) => (

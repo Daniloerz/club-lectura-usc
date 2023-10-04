@@ -9,10 +9,10 @@ import Typography from '@mui/material/Typography';
 
 export default function AlignItemsList() {
   return (
-    <List sx={{maxWidth: 1200, bgcolor: 'background.paper', margin: 'auto' }}>
+    <List sx={{width:'100%', bgcolor: 'background.paper', margin: 'auto' }}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          <Avatar alt="Remy Sharp" src="" />
         </ListItemAvatar>
         <ListItemText
           primary="Titulo 1"
@@ -34,7 +34,7 @@ export default function AlignItemsList() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+          <Avatar alt="Travis Howard" src="" />
         </ListItemAvatar>
         <ListItemText
           primary="Titulo 2"
@@ -56,7 +56,7 @@ export default function AlignItemsList() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+          <Avatar alt="Cindy Baker" src="" />
         </ListItemAvatar>
         <ListItemText
           primary="Nombre 3"

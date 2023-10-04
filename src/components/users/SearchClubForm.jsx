@@ -14,6 +14,16 @@ export default function SearchClubForm() {
         Buscar Club
       </Typography>
       <Grid container spacing={3} display='inline-block' margin= 'auto' >
+      <Grid item sm={10}>
+          <TextField
+            id="id"
+            name="id"
+            label="ID"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+          />
+        </Grid>
         <Grid item sm={10}>
           <TextField
             id="nombre"

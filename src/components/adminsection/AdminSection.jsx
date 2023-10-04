@@ -17,7 +17,7 @@ import Footer from '../main/Footer';
 import CreateSection from './CreateSection';
 import ProfileInfo from './ProfileInfo';
 import SearchBook from './SearchBook';
-import SearchClub from './SearchClubAdmin';
+import SearchClub from './SearchClub';
 import EditSection from './EditSection';
 import SearchSection from './SearchSection';
 import DeleteSection from './DeleteSection';

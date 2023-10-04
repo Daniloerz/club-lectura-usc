@@ -35,6 +35,17 @@ export default function SearchBook() {
             variant="standard"
           />
         </Grid>
+        <Grid item sm={10}>
+          <TextField
+            
+            id="isbn"
+            name="isbn"
+            label="ISBN"
+            fullWidth
+            autoComplete="family-name"
+            variant="standard"
+          />
+        </Grid>
         <Grid item >
           <SelectCategory labelName='Categoría'/>
         </Grid>
