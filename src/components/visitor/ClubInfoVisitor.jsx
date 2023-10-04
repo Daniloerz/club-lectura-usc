@@ -6,8 +6,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from '../main/Header';
 import Footer from '../main/Footer';
 import Comments from '../main/Comments'; 
-import portada from '../../img/club-de-lectura.jpeg'
 import { Divider } from '@mui/material';
+import InfoClub from '../general/InfoClub';
 
 const defaultTheme = createTheme();
 
@@ -16,31 +16,7 @@ export default function ClubInfoVisitor({titulo, autor}) {
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Header title="Club de Lectura - USC"/>
-      <Container sx={{ py: 8, display: 'flex', alignItems: 'center'}} >
-      {<img style={{ display: 'block', marginRight: 20, height: 500, borderStyle: 'groove'}} src= {portada} alt='logoUsc' />}
-
-        <Typography
-          variant="subtitle1"
-          color="black"
-          component="p"
-          sx={{height:500, width: 800, padding: 5, borderStyle: 'double', backgroundColor: 'rgb(0, 75, 135,0.75)'}}
-        >
-          
-          <b>Nombre del club:</b> {titulo}
-          <Divider />
-          <b>Principal Responsable:</b> {autor}
-          <Divider />
-          <b>Año de Creación:</b> {autor}
-          <Divider />
-          <b>Géneros principales:</b> {autor}
-          <Divider />
-          <b>Periodicidad de reuniones:</b> {autor}
-          <Divider />
-          <b>Cantidad de Integrantes:</b> {autor}
-          <Divider />
-          <b>Descripción:</b> {autor}
-        </Typography>
-        </Container>
+      <InfoClub titulo={titulo} autor={autor} />
         <Divider/>
         <Container sx={{display: 'flex', flexDirection: 'column'}}>
         <Typography

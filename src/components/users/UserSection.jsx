@@ -16,7 +16,7 @@ import { MainListItemsAdmin, SecondaryListItemsAdmin } from './ListItemsUser';
 import Footer from '../main/Footer';
 import ProfileInfo from '../adminsection/ProfileInfo';
 import SearchBook from '../adminsection/SearchBook';
-import SearchClub from '../adminsection/SearchClubAdmin';
+import SearchClub from '../adminsection/SearchClub';
 
 const drawerWidth = 240;
 

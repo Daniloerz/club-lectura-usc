@@ -43,7 +43,7 @@ function Header(props) {
   );
 }
 
-Header.propTypes = {
+{/*Header.propTypes = {
   sections: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -51,6 +51,6 @@ Header.propTypes = {
     }),
   ).isRequired,
   title: PropTypes.string.isRequired,
-};
+};*/}
 
 export default Header;

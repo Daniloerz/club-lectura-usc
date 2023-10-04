@@ -10,7 +10,7 @@ import BookInfoVisitor from './components/visitor/BookInfoVisitor';
 import ClubInfoVisitor from './components/visitor/ClubInfoVisitor';
 import AdminSection from './components/adminsection/AdminSection';
 import UserSection from './components/users/UserSection';
-import SearchClubAdmin from './components/adminsection/SearchClubAdmin';
+import SearchClub from './components/adminsection/SearchClub';
 import EditSection from './components/adminsection/EditSection';
 
 
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/clubadmin",
-    element: <SearchClubAdmin />,
+    element: <SearchClub />,
     errorElement: <h1>Error</h1>,
   },
   {

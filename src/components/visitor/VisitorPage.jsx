@@ -10,26 +10,34 @@ import { TextField } from '@mui/material';
 import Footer from '../main/Footer';
 import ContentVisitor from './ContentVisitor';
 
-const sections = [
-    { title: 'Drama', url: '#' },
-    { title: 'Ficción', url: '#' },
-    { title: 'Historia', url: '#' },
-    { title: 'Ciencia', url: '#' },
-    { title: 'Internacionales', url: '#' },
-    { title: 'Locales', url: '#' },
-    { title: 'Romance', url: '#' },
-    { title: 'Aventura', url: '#' },
-    { title: 'Infantiles', url: '#' },
-    { title: 'Poesía', url: '#' },
-  ];
-
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const defaultTheme = createTheme();
 
 export default function VisitorPage() {
-  return (
+
+  const [type, setType] = React.useState('both');
+  
+  const handleChange = (event) => {
+    setType(event.target.value);
+  };
+
+  function setResults(){
+    if(type === 'both'){
+      return (
+      <>
+      <ContentVisitor items={cards} title={'Libros'} name={'Libro'} url={'/bookinfov'}/>
+      <ContentVisitor items={cards} title={'Clubes de lectura'} name={'Club'} url={'/clubinfov'}/>
+      </>);
+    } else if (type === 'libro'){
+      return <ContentVisitor items={cards} title={'Libros'} name={'Libro'} url={'/bookinfov'}/>;
+    } else if (type === 'club'){
+      return <ContentVisitor items={cards} title={'Clubes de lectura'} name={'Club'} url={'/clubinfov'}/>;
+    }
+  }
+
+  return(
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Header title="Club de Lectura - USC"/>
@@ -49,13 +57,13 @@ export default function VisitorPage() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Buscar</Button>
+              <Button variant="contained" value="libro" onClick={handleChange}>Buscar Libro</Button>
+              <Button variant="contained" value="club" onClick={handleChange}>Buscar Club</Button>
              
             </Stack>
           </Container>
         </Box>
-        <ContentVisitor items={cards} title={'Libros'} name={'Libro'} url={'/bookinfov'}/>
-        <ContentVisitor items={cards} title={'Clubes de lectura'} name={'Club'} url={'/clubinfov'}/>
+        {setResults()}
       </main>
       <Footer title="Universidad Santiago de Cali"
                 description="Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional.
