@@ -12,8 +12,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SignUp from './SignUp';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import GoogleButton from 'react-google-button'
 
 const router = createBrowserRouter([
   {
@@ -27,7 +27,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="white" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/" >
+      <Link color="inherit" href="https://www.usc.edu.co/" >
         usc.edu.co
       </Link>{' '}
       {new Date().getFullYear()}
@@ -36,6 +36,13 @@ function Copyright(props) {
   );
 }
 const defaultTheme = createTheme();
+
+const googleAuth = () => {
+  window.open(
+    'http://localhost:443/auth/google/callback',
+    "_self"
+  );
+};
 
 export default function SignInSide() {
   const handleSubmit = (event) => {
@@ -49,7 +56,7 @@ export default function SignInSide() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: '100vh'}}>
+      <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
           item
@@ -65,7 +72,7 @@ export default function SignInSide() {
             backgroundPosition: 'center',
           }}
         />
-        <Grid  item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{bgcolor: '#004B87'}}>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{ bgcolor: '#004B87' }}>
           <Box
             sx={{
               my: 8,
@@ -75,11 +82,11 @@ export default function SignInSide() {
               alignItems: 'center'
             }}
           >
-             {<img style={{ display: 'block', margin: 'auto', paddingBottom: 30, maxHeight: 150}} src='https://www.usc.edu.co/wp-content/uploads/2023/03/Logo_Universidad_Santiago_de_Cali_USC-1.png' alt='logoUsc' />}
+            {<img style={{ display: 'block', margin: 'auto', paddingBottom: 30, maxHeight: 150 }} src='https://www.usc.edu.co/wp-content/uploads/2023/03/Logo_Universidad_Santiago_de_Cali_USC-1.png' alt='logoUsc' />}
             <Typography component="h1" variant="h5" color='white'>
               ¡Ingresa!
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1}}>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
                 required
@@ -89,7 +96,7 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                
+
               />
               <TextField
                 margin="normal"
@@ -102,29 +109,41 @@ export default function SignInSide() {
                 autoComplete="current-password"
               />
               <FormControlLabel
-                control={<Checkbox value="remember" color="primary"/>} sx={{color:'white'}}
+                control={<Checkbox value="remember" color="primary" />} sx={{ color: 'white' }}
                 label="Recuerdame"
               />
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2}}
+                sx={{ mt: 3, mb: 2 }}
               >
                 Ingresar
               </Button>
               <Grid container>
                 <Grid item xs >
-                  <Link sx={{color: 'white'}} href="#" variant="body2" >
+                  <Link sx={{ color: 'white' }} href="#" variant="body2" >
                     ¿Olvidaste tu contraseña?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link sx={{color: 'white'}} href="/signup" variant="body2">
+                  <Link sx={{ color: 'white' }} href="/signup" variant="body2">
                     {"¿No tienes una cuenta? Registrarse"}
                   </Link>
                 </Grid>
               </Grid>
+              <Box
+              sx={{
+                my: 2,
+                mx: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}>
+              <GoogleButton
+                onClick={googleAuth}
+              />
+              </Box>
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
